@@ -19,11 +19,6 @@ public class AntrianPembeli22 {
         return head == null;
     }
 
-    // untuk mengembalikan jumlah pembeli yg antri
-    public int getSize() {
-        return size;
-    }
-
     // untuk membuat no antrian baru secara otomatis
     public int generateNo() {
         autoAntrian++;
@@ -89,7 +84,6 @@ public class AntrianPembeli22 {
             current.data.tampil(); // memberikan tampilan data ke method tampil() milik pembeli
             current = current.next; // maju ke node berikut
         }
-
     }
 }
 
