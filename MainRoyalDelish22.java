@@ -9,9 +9,10 @@ public class MainRoyalDelish22 {
         DaftarPesanan22 pesanan = new DaftarPesanan22();
 
         // penambahan data menggunakan konstruktor
-        antrian.addLast(new Pembeli22(antrian.generateNo(), "Ainra", "08224500000"));
-        antrian.addLast(new Pembeli22(antrian.generateNo(), "Danra", "08224511111"));
-        antrian.addLast(new Pembeli22(antrian.generateNo(), "Sanri", "08224522222"));
+        antrian.addLast(new Pembeli22(antrian.generateNo(), "Ainra", "08224500000", "08:00"));
+        antrian.addLast(new Pembeli22(antrian.generateNo(), "Danra", "08:05", "08:05"));
+        antrian.addLast(new Pembeli22(antrian.generateNo(), "Sanri", "08224522222", "08:10"));
+        antrian.addLast(new Pembeli22(antrian.generateNo(), "Nindya", "08224533333", "08:15"));
 
         int pilihan;
 
@@ -23,6 +24,7 @@ public class MainRoyalDelish22 {
             System.out.println("2. Cetak Antrian");
             System.out.println("3. Hapus Antrian dan Pesan");
             System.out.println("4. Laporan Pesanan");
+            System.out.println("5. Cari Pembeli Berdasarkan Waktu Daftar");
             System.out.println("0. keluar");
             System.out.print("Pilih menu : ");
             pilihan = sc.nextInt();
@@ -30,12 +32,14 @@ public class MainRoyalDelish22 {
 
             switch (pilihan) {
                 case 1:
-                    System.out.print("Nama Pembeli : ");
+                    System.out.print("Nama Pembeli             : ");
                     String nama = sc.nextLine();
-                    System.out.print("No HP        : ");
+                    System.out.print("No HP                    : ");
                     String noHp = sc.nextLine();
+                    System.out.print("Waktu Daftar (ex: 12:50) : ");
+                    String waktu = sc.nextLine();
                     int noAntrian = antrian.generateNo(); // untuk meminta no antrian secara otomatis 
-                    Pembeli22 pembeliBaru = new Pembeli22(noAntrian, nama, noHp); // untuk memasukkan inputan data ke objek Pembeli
+                    Pembeli22 pembeliBaru = new Pembeli22(noAntrian, nama, noHp, waktu); // untuk memasukkan inputan data ke objek Pembeli
 
                     // memasukkan objek Pembeli ke dalam Double Linked List Antrian
                     antrian.addLast(pembeliBaru);
@@ -75,6 +79,12 @@ public class MainRoyalDelish22 {
 
                 case 4:
                     pesanan.cetaklaporan(); // memanggil method cetaklapran() dan sudah otomatis memanggil sortByNama()
+                    break;
+
+                case 5:
+                    System.out.print("Masukkan waktu daftar yang dicari (ex: 08:00): ");
+                    String cariWaktu = sc.nextLine();
+                    antrian.searchByWaktu(cariWaktu); // Memanggil method pencarian
                     break;
 
                 case 0:

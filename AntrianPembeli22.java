@@ -68,6 +68,25 @@ public class AntrianPembeli22 {
         return target; // utk mengembalikan data org yg dihapus ke main
     }
 
+    // untuk mencari pembeli berdasarkan waktu daftar (linear search)
+    public void searchByWaktu(String waktu) {
+        NodePembeli22 current = head; // Mulai pencarian dari head
+        boolean ditemukan = false;
+
+        System.out.println("Hasil pencarian untuk waktu: " + waktu);
+        while (current != null) { // Traversal sepanjang list
+            // untuk membandingkan waktu daftar dengan inputan user
+            if (current.data.waktuDaftar.equalsIgnoreCase(waktu)) {
+                current.data.tampil();
+                ditemukan = true;
+            }
+            current = current.next; // maju ke node berikutnya
+        }
+        if (!ditemukan) { // jika tidak ada yg cocok
+            System.out.println("Data tidak ditemukan.");
+        }
+    }
+
     // untuk menampilkan seluruh data antrian dari head ke tail
     public void printAntrian() {
         System.out.println("================================================");
@@ -78,7 +97,7 @@ public class AntrianPembeli22 {
             System.out.println("Antrian Kosong.");
             return; // utk keluar dri method print ketika bernilai true
         }
-        System.out.printf("%-13s %-20s %s%n", "No Antrian", "Nama", "No Hp");
+        System.out.printf("%-13s %-20s %-15s %s%n", "No Antrian", "Nama", "No Hp", "Waktu Daftar"); // tambahkan format waktu daftar
         NodePembeli22 current = head; // traversal dari head
         while (current != null) {
             current.data.tampil(); // memberikan tampilan data ke method tampil() milik pembeli
