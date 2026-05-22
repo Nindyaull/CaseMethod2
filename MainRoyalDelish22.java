@@ -24,7 +24,7 @@ public class MainRoyalDelish22 {
             System.out.println("2. Cetak Antrian");
             System.out.println("3. Hapus Antrian dan Pesan");
             System.out.println("4. Laporan Pesanan");
-            System.out.println("5. Cari Pembeli Berdasarkan Waktu Daftar");
+            System.out.println("5. Cari Pembeli Berdasarkan Waktu Daftar"); // tambahkan print untuk mencari waktu daftar
             System.out.println("0. keluar");
             System.out.print("Pilih menu : ");
             pilihan = sc.nextInt();
@@ -36,7 +36,7 @@ public class MainRoyalDelish22 {
                     String nama = sc.nextLine();
                     System.out.print("No HP                    : ");
                     String noHp = sc.nextLine();
-                    System.out.print("Waktu Daftar (ex: 12:50) : ");
+                    System.out.print("Waktu Daftar (ex: 12:50) : "); // tambahkan inputan waktu daftar
                     String waktu = sc.nextLine();
                     int noAntrian = antrian.generateNo(); // untuk meminta no antrian secara otomatis 
                     Pembeli22 pembeliBaru = new Pembeli22(noAntrian, nama, noHp, waktu); // untuk memasukkan inputan data ke objek Pembeli
@@ -81,7 +81,7 @@ public class MainRoyalDelish22 {
                     pesanan.cetaklaporan(); // memanggil method cetaklapran() dan sudah otomatis memanggil sortByNama()
                     break;
 
-                case 5:
+                case 5: // modifikasi tambahan untuk mencari waktu daftar pembeli
                     System.out.print("Masukkan waktu daftar yang dicari (ex: 08:00): ");
                     String cariWaktu = sc.nextLine();
                     antrian.searchByWaktu(cariWaktu); // Memanggil method pencarian
