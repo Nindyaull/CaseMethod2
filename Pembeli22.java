@@ -4,7 +4,7 @@ public class Pembeli22 {
     int noAntrian;
     String namaPembeli;
     String noHp;
-    String waktuDaftar; // untuk mencatat waktu daftar pembeli
+    String waktuDaftar; // untuk mencatat waktu daftar pembeli [MODIFIKASI]
 
     // konstruktor pembeli 
     // untuk menginisialisasi seluruh atribut pembeli saat objek dibuat

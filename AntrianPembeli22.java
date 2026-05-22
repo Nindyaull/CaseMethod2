@@ -68,7 +68,7 @@ public class AntrianPembeli22 {
         return target; // utk mengembalikan data org yg dihapus ke main
     }
 
-    // untuk mencari pembeli berdasarkan waktu daftar (linear search)
+    // untuk mencari pembeli berdasarkan waktu daftar (linear search) [MODIFIKASI]
     public void searchByWaktu(String waktu) {
         NodePembeli22 current = head; // Mulai pencarian dari head
         boolean ditemukan = false;
